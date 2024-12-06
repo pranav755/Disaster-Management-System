@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        defer
+    ></script>
+    <script src="script.js" defer></script>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1><i class="fas fa-globe"></i> Disaster Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="#weather-overview">Weather Overview</a></li>
+                <li><a href="#active-alerts">Alerts</a></li>
+                <li><a href="#map-section">Map</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Weather Overview Section -->
+        <section id="weather-overview">
+            <h2><i class="fas fa-cloud-sun"></i> Weather Overview</h2>
+            <div class="search-bar">
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Enter a city or location..."
+                />
+                <button id="search-button"><i class="fas fa-search"></i> Search</button>
+            </div>
+
+            <div class="weather-details">
+                <p>📍 <strong>Location:</strong> <span id="location">Loading...</span></p>
+                <p>🌡️ <strong>Temperature:</strong> <span id="temperature">Loading...</span></p>
+                <p>🌧️ <strong>Rainfall:</strong> <span id="rainfall">Loading...</span></p>
+                <p>💨 <strong>Wind Speed:</strong> <span id="wind-speed">Loading...</span></p>
+            </div>
+        </section>
+
+        <!-- Alerts Section -->
+        <section id="active-alerts">
+            <h2><i class="fas fa-bell"></i> Active Alerts</h2>
+            <div class="alerts-container">
+                <p>No active alerts. Stay safe!</p>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section id="map-section">
+            <h2><i class="fas fa-map-marker-alt"></i> Map</h2>
+            <div id="map" style="height: 400px; width: 100%; margin-top: 20px;"></div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section id="quick-actions">
+            <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+            <div class="actions-container">
+                <button id="subscribe-alerts"><i class="fas fa-envelope"></i> Subscribe to Alerts</button>
+                <button id="report-issue"><i class="fas fa-exclamation-triangle"></i> Report an Issue</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Subscribe Modal -->
+<div id="subscribe-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="close-subscribe">&times;</span>
+        <h3>Subscribe to Alerts</h3>
+        <p>Enter your email address:</p>
+        <input type="email" id="subscribe-email" placeholder="Your email" />
+        <button id="subscribe-submit">Subscribe</button>
+    </div>
+</div>
+
+<!-- Report Issue Modal -->
+<div id="report-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="close-report">&times;</span>
+        <h3>Report an Issue</h3>
+        <p>Describe the issue:</p>
+        <textarea id="issue-description" placeholder="Your issue"></textarea>
+        <button id="report-submit">Submit</button>
+    </div>
+</div>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Disaster Management System. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Alert Sound -->
+    <audio id="alertSound" src="tspt_sos_morse_radio_message_loop_082.mp3" preload="auto"></audio>
+</body>
+
+</html>
